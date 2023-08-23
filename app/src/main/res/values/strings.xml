@@ -1,0 +1,16 @@
+<resources>
+    <!-- This is the name of the app that will be displayed on the app icon -->
+    <string name="app_name">Hello Japan</string>
+
+    <!-- Set title for the Hiragana section -->
+    <string name="title_hiragana">Hiragana</string>
+
+    <!-- Set the text for the button that opens the Hiragana section -->
+    <string name="btn_hiragana">Hiragana</string>
+
+    <!-- Set the title for the Katakana section -->
+    <string name="title_katagana">Katakana</string>
+
+    <!-- Set the text for the button that opens the Katakana section -->
+    <string name="btn_katakana">Katakana</string>
+</resources>

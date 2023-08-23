@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".MainActivity">
+
+    <!-- Layout for Hiragana alphabet-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="13">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <!-- TextView displays corresponding title -->
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/title_hiragana"
+                android:textColor="@color/my_red"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="11"
+            android:orientation="vertical">
+            <!-- The Hiragana table is displayed inside a ScrollView -->
+            <ScrollView
+                android:id="@+id/hira_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Layout for first row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cropToPadding="true"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:cropToPadding="true"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnA"
+                            android:src="@drawable/a_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnI"
+                            android:src="@drawable/i_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnU"
+                            android:src="@drawable/u_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnE"
+                            android:src="@drawable/e_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnO"
+                            android:src="@drawable/o_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for second row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKa"
+                            android:src="@drawable/ka_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKi"
+                            android:src="@drawable/ki_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKu"
+                            android:src="@drawable/ku_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKe"
+                            android:src="@drawable/ke_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKo"
+                            android:src="@drawable/ko_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for third row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSa"
+                            android:src="@drawable/sa_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnShi"
+                            android:src="@drawable/shi_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSu"
+                            android:src="@drawable/su_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSe"
+                            android:src="@drawable/se_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSo"
+                            android:src="@drawable/so_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for fourth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTa"
+                            android:src="@drawable/ta_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnChi"
+                            android:src="@drawable/chi_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTsu"
+                            android:src="@drawable/tsu_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTe"
+                            android:src="@drawable/te_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTo"
+                            android:src="@drawable/to_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for fifth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNa"
+                            android:src="@drawable/na_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNi"
+                            android:src="@drawable/ni_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNu"
+                            android:src="@drawable/nu_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNe"
+                            android:src="@drawable/ne_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNo"
+                            android:src="@drawable/no_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for sixth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHa"
+                            android:src="@drawable/ha_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHi"
+                            android:src="@drawable/hi_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnFu"
+                            android:src="@drawable/fu_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHe"
+                            android:src="@drawable/he_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHo"
+                            android:src="@drawable/ho_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for seventh row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMa"
+                            android:src="@drawable/ma_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMi"
+                            android:src="@drawable/mi_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMu"
+                            android:src="@drawable/mu_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMe"
+                            android:src="@drawable/me_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMo"
+                            android:src="@drawable/mo_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for eighth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnYa"
+                            android:src="@drawable/ya_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnYu"
+                            android:src="@drawable/yu_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnYo"
+                            android:src="@drawable/yo_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for ninth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRa"
+                            android:src="@drawable/ra_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRi"
+                            android:src="@drawable/ri_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRu"
+                            android:src="@drawable/ru_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRe"
+                            android:src="@drawable/re_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRo"
+                            android:src="@drawable/ro_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for tenth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnWa"
+                            android:src="@drawable/wa_hira" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnWo"
+                            android:src="@drawable/wo_hira" />
+                    </LinearLayout>
+
+                    <!-- Layout for last row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnN"
+                            android:src="@drawable/n_hira" />
+                        <!-- ImageView for button with no letter -->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- The Katakana table is also displayed inside a ScrollView -->
+            <ScrollView
+                android:id="@+id/kata_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Layout for first row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cropToPadding="true"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:cropToPadding="true"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnA"
+                            android:src="@drawable/a_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnI"
+                            android:src="@drawable/i_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:cropToPadding="true"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnU"
+                            android:src="@drawable/u_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnE"
+                            android:src="@drawable/e_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnO"
+                            android:src="@drawable/o_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for second row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKa"
+                            android:src="@drawable/ka_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKi"
+                            android:src="@drawable/ki_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKu"
+                            android:src="@drawable/ku_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKe"
+                            android:src="@drawable/ke_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnKo"
+                            android:src="@drawable/ko_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for third row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSa"
+                            android:src="@drawable/sa_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnShi"
+                            android:src="@drawable/shi_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSu"
+                            android:src="@drawable/su_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSe"
+                            android:src="@drawable/se_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnSo"
+                            android:src="@drawable/so_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for fourth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTa"
+                            android:src="@drawable/ta_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnChi"
+                            android:src="@drawable/chi_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTsu"
+                            android:src="@drawable/tsu_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTe"
+                            android:src="@drawable/te_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnTo"
+                            android:src="@drawable/to_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for fifth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNa"
+                            android:src="@drawable/na_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNi"
+                            android:src="@drawable/ni_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNu"
+                            android:src="@drawable/nu_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNe"
+                            android:src="@drawable/ne_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnNo"
+                            android:src="@drawable/no_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for sixth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHa"
+                            android:src="@drawable/ha_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHi"
+                            android:src="@drawable/hi_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnFu"
+                            android:src="@drawable/fu_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHe"
+                            android:src="@drawable/he_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnHo"
+                            android:src="@drawable/ho_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for seventh row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMa"
+                            android:src="@drawable/ma_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMi"
+                            android:src="@drawable/mi_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMu"
+                            android:src="@drawable/mu_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMe"
+                            android:src="@drawable/me_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnMo"
+                            android:src="@drawable/mo_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for eighth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnYa"
+                            android:src="@drawable/ya_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnYu"
+                            android:src="@drawable/yu_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnYo"
+                            android:src="@drawable/yo_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for ninth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRa"
+                            android:src="@drawable/ra_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRi"
+                            android:src="@drawable/ri_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRu"
+                            android:src="@drawable/ru_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRe"
+                            android:src="@drawable/re_kata" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnRo"
+                            android:src="@drawable/ro_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for tenth row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnWa"
+                            android:src="@drawable/wa_kata" />
+                        <!--                        ImageView for empty button in alphabet-->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnWo"
+                            android:src="@drawable/wo_kata" />
+                    </LinearLayout>
+
+                    <!-- Layout for last row of letters -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnN"
+                            android:src="@drawable/n_kata" />
+                        <!-- ImageView for button with no letter -->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/style_btn_words"
+                            android:foreground="@drawable/style_click_effect"
+                            android:onClick="handleEventOnClickBtnEmpty"
+                            android:src="@drawable/empty" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- Linear layout that contains 2 switching button-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="right">
+                <!-- Hiragana switch button -->
+                <Button
+                    android:id="@+id/hiraSwitch_btn"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/status_in"
+                    android:text="@string/btn_hiragana"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+                <!-- Katakana switch button -->
+                <Button
+                    android:id="@+id/kataSwitch_btn"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/status_out"
+                    android:text="@string/btn_katakana"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
